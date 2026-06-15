@@ -1,7 +1,0 @@
-{
-  "/api/research/status/route": "app/api/research/status/route.js",
-  "/api/research/result/route": "app/api/research/result/route.js",
-  "/api/research/start/route": "app/api/research/start/route.js",
-  "/api/research/generate/route": "app/api/research/generate/route.js",
-  "/page": "app/page.js"
-}
