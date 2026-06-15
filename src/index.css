@@ -116,4 +116,32 @@
   .fade-in {
     animation: fade-in 0.3s ease-out;
   }
+
+  .dark ::-webkit-scrollbar {
+    width: 6px;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #22314E;
+    border-radius: 3px;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #2E4060;
+  }
+
+  .light ::-webkit-scrollbar {
+    width: 6px;
+  }
+  .light ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .light ::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 3px;
+  }
+  .light ::-webkit-scrollbar-thumb:hover {
+    background: #9CA3AF;
+  }
 }

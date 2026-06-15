@@ -47,14 +47,14 @@ export default function InfluencerLeaderboard({ tweets }: Props) {
   const medals = ['#FFD700', '#C0C0C0', '#CD7F32'];
 
   return (
-    <div className="bento-card h-full flex flex-col">
-      <div className="flex items-center gap-2 mb-3">
+    <div className="bento-card h-full flex flex-col overflow-hidden">
+      <div className="flex items-center gap-2 mb-3 shrink-0">
         <Trophy className="w-4 h-4 text-neon-magenta" />
         <h2 className={`text-sm font-semibold uppercase tracking-wider ${isDark ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
           Influencer Leaderboard
         </h2>
       </div>
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-y-auto min-h-0">
         <table className="w-full">
           <thead>
             <tr className={`border-b ${isDark ? 'border-[#22314E]' : 'border-[#E5E7EB]'}`}>

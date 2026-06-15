@@ -70,14 +70,14 @@ export default function Dashboard() {
           </div>
 
           {/* Tile 6: Bottom Full Width Mega Tile */}
-          <div className="lg:col-span-4">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-5">
+          <div className="lg:col-span-4 max-h-[520px]">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-5 h-full">
               {/* Left panel: 40% = 2/5 */}
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 min-h-0">
                 <InfluencerLeaderboard tweets={filteredTweets} />
               </div>
               {/* Right panel: 60% = 3/5 */}
-              <div className="lg:col-span-3">
+              <div className="lg:col-span-3 min-h-0">
                 <TweetFeed tweets={filteredTweets} />
               </div>
             </div>

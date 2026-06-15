@@ -37,11 +37,11 @@ export default function TweetFeed({ tweets }: Props) {
   const sortedTweets = [...tweets].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 
   return (
-    <div className="bento-card h-full flex flex-col">
-      <h2 className={`text-sm font-semibold uppercase tracking-wider mb-3 ${isDark ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
+    <div className="bento-card h-full flex flex-col overflow-hidden">
+      <h2 className={`text-sm font-semibold uppercase tracking-wider mb-3 shrink-0 ${isDark ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
         Tweet Feed
       </h2>
-      <div className="flex-1 overflow-auto space-y-3 pr-1">
+      <div className="flex-1 overflow-y-auto min-h-0 space-y-3 pr-1">
         {sortedTweets.map(t => {
           const isExpanded = expandedId === t.id;
           return (
