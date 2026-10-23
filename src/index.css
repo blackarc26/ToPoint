@@ -69,6 +69,13 @@
     @apply rounded-3xl p-6 transition-all duration-300;
   }
 
+  .research-gradient {
+    background: linear-gradient(100deg, #817DFF 0%, #D65AE8 48%, #22C5DD 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .light .bento-card {
     background: var(--color-card-light);
     box-shadow:

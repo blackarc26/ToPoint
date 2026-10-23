@@ -10,3 +10,11 @@ export interface Tweet {
   engagement: number;
   extra_columns: Record<string, string>;
 }
+
+export interface ResearchSession {
+  id: string;
+  topic: string;
+  goal: string;
+  queries: string[];
+  created_at: string;
+}

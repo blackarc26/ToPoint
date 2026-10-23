@@ -10,9 +10,14 @@ import TopLocations from './TopLocations';
 import ReplyNetworkMap from './ReplyNetworkMap';
 import InfluencerLeaderboard from './InfluencerLeaderboard';
 import TweetFeed from './TweetFeed';
-import { Loader as Loader2 } from 'lucide-react';
+import { Loader as Loader2, Search } from 'lucide-react';
+import type { ResearchSession } from '../lib/types';
 
-export default function Dashboard() {
+interface DashboardProps {
+  activeSession: ResearchSession | null;
+}
+
+export default function Dashboard({ activeSession }: DashboardProps) {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   const { searchQuery, keywordFilter, dateFrom, dateTo } = useFilters();
@@ -45,6 +50,16 @@ export default function Dashboard() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-[#0B0F19]' : 'bg-[#F9FAFB]'}`}>
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+        {activeSession && (
+          <div className="mb-5 flex flex-col gap-4 rounded-3xl border border-[#6D6AFF]/30 bg-gradient-to-r from-[#6D6AFF]/10 via-[#C645E8]/10 to-[#22C5DD]/10 p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${isDark ? 'text-[#9EA3FF]' : 'text-[#5F61BE]'}`}>Latest research</p>
+              <h2 className={`mt-1 text-xl font-semibold ${isDark ? 'text-white' : 'text-[#111827]'}`}>{activeSession.topic}</h2>
+              <p className={`mt-1 text-sm ${isDark ? 'text-[#AEB5C5]' : 'text-[#687385]'}`}>{activeSession.goal}</p>
+            </div>
+            <div className={`flex shrink-0 items-center gap-2 rounded-xl px-3 py-2 text-xs ${isDark ? 'bg-[#0B0F19]/60 text-[#C9D0DE]' : 'bg-white/70 text-[#687385]'}`}><Search className="h-4 w-4 text-[#C645E8]" /> {activeSession.queries.length} queries ready</div>
+          </div>
+        )}
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-5 auto-rows-auto">
 

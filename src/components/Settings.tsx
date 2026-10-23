@@ -1,0 +1,9 @@
+import { Moon, Sun, SlidersHorizontal } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
+
+export default function Settings() {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
+  const muted = isDark ? 'text-[#8B93A5]' : 'text-[#687385]';
+  return <main className={`min-h-[calc(100vh-73px)] px-4 py-10 sm:px-6 ${isDark ? 'bg-[#090A0E]' : 'bg-[#F7F8FA]'}`}><div className="mx-auto max-w-[760px]"><div className="mb-8"><p className={`text-sm ${muted}`}>Workspace preferences</p><h1 className="mt-1 text-3xl font-bold">Settings</h1><p className={`mt-2 ${muted}`}>Adjust how your research workspace looks and feels.</p></div><section className={`rounded-3xl border ${isDark ? 'border-[#252831] bg-[#111217]' : 'border-[#E1E5EB] bg-white'}`}><div className="flex items-center justify-between gap-6 border-b p-6 ${isDark ? 'border-[#252831]' : 'border-[#E8EBF0]'}"><div className="flex items-start gap-4"><div className="rounded-xl bg-[#22C5DD]/15 p-3 text-[#22C5DD]"><SlidersHorizontal className="h-5 w-5" /></div><div><h2 className="font-semibold">Appearance</h2><p className={`mt-1 text-sm ${muted}`}>Choose the visual mode for your dashboard.</p></div></div><button type="button" onClick={toggleTheme} className={`inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm font-medium ${isDark ? 'border-[#353844] text-[#D8DCE5]' : 'border-[#DDE2EA] text-[#4B5565]'}`}>{isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}{isDark ? 'Dark' : 'Light'}</button></div><div className="flex items-center gap-3 p-6"><div className="rounded-xl bg-[#C645E8]/15 p-3 text-[#C645E8]"><Sun className="h-5 w-5" /></div><div><h2 className="font-semibold">Research workspace</h2><p className={`mt-1 text-sm ${muted}`}>Sessions are saved so you can revisit previous research from Chats.</p></div></div></section></div></main>;
+}
